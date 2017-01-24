@@ -1,6 +1,6 @@
 <div class="container">
 <h1>MDdiff</h1>
-<p>Markdownを比較するWebアプリ <a href="index2.html">次に進む</a></p>
+<p>Markdownを比較するWebアプリ</a></p>
 
 <%= form_tag({controller: :main, action: :convert}) do %>
   <div class="clearfix">
@@ -30,5 +30,13 @@
     <%= text_area_tag "output-mmd", @output_multi, class: "form-control", rows: 6 %>
   </div>
 <% end %>
+
+<h2>実行履歴</h2>
+
+<ul>
+<% @histories.each do |history|  %>
+  <li><%= link_to history.time_exec, convert_path(history) %></li>
+<% end %>
+</ul>
 
 </div>
