@@ -1,0 +1,25 @@
+<h1>欠席情報一覧</h1>
+<table>
+  <tr>
+    <th>名前</th>
+    <th>１</th>
+    <th>２</th>
+    <th>３</th>
+    <th>４</th>
+    <th>５</th>
+    <th>外</th>
+    <th>理由</th>
+  </tr>
+  <% @absent_students.each do |absent_student| %>
+  <tr>
+    <td><%= absent_student.name %></td>
+    <td><%= absent_student.first %></td>
+    <td><%= absent_student.second %></td>
+    <td><%= absent_student.third %></td>
+    <td><%= absent_student.fourth %></td>
+    <td><%= absent_student.fifth %></td>
+    <td><%= absent_student.outside %></td>
+    <td><%= absent_student.reason %></td>
+  </tr>
+  <% end %>
+</table>
